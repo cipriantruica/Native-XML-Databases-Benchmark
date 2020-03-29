@@ -1,0 +1,36 @@
+curl 'http://127.0.0.1:5984/dblpdb8/_design/count_all_authors/_view/count_all_authors?group=true&descending=true'
+
+curl 'http://127.0.0.1:5984/dblpdb8/_design/count_all_authors_year/_view/count_all_authors_year?group=true&descending=true'
+
+#q1_kw1
+curl 'http://127.0.0.1:5984/dblpdb8/_find' -d '{ "selector": {"title": {"$regex": "(?i)database"}}, "fields": ["title"], "limit": 7000000}' -H 'Content-Type:application/json'
+
+#q1_kw2
+curl 'http://127.0.0.1:5984/dblpdb8/_find' -d '{ "selector": {"title": {"$regex": "(?i)text"}}, "fields": ["title"], "limit": 7000000}' -H 'Content-Type:application/json'
+
+#q1_kw3
+curl 'http://127.0.0.1:5984/dblpdb8/_find' -d '{ "selector": {"title": {"$regex": "(?i)mining"}}, "fields": ["title"], "limit": 7000000}' -H 'Content-Type:application/json'
+
+#q2_kw1o2
+curl 'http://127.0.0.1:5984/dblpdb8/_find' -d '{ "selector": { "$or": [ {"title": {"$regex": "(?i)database"}}, {"title": {"$regex": "(?i)text"}}] }, "fields": ["title"], "limit": 7000000}' -H 'Content-Type:application/json'
+
+#q2_kw1a2
+curl 'http://127.0.0.1:5984/dblpdb8/_find' -d '{ "selector": { "$and": [ {"title": {"$regex": "(?i)database"}}, {"title": {"$regex": "(?i)text"}}] }, "fields": ["title"], "limit": 7000000}' -H 'Content-Type:application/json'
+
+#q2_kw1o3
+curl 'http://127.0.0.1:5984/dblpdb8/_find' -d '{ "selector": { "$or": [ {"title": {"$regex": "(?i)database"}}, {"title": {"$regex": "(?i)mining"}}] }, "fields": ["title"], "limit": 7000000}' -H 'Content-Type:application/json'
+
+#q2_kw1a3
+curl 'http://127.0.0.1:5984/dblpdb8/_find' -d '{ "selector": { "$and": [ {"title": {"$regex": "(?i)database"}}, {"title": {"$regex": "(?i)mining"}}] }, "fields": ["title"], "limit": 7000000}' -H 'Content-Type:application/json'
+
+#q2_kw2o3
+curl 'http://127.0.0.1:5984/dblpdb8/_find' -d '{ "selector": { "$or": [ {"title": {"$regex": "(?i)text"}}, {"title": {"$regex": "(?i)mining"}}] }, "fields": ["title"], "limit": 7000000}' -H 'Content-Type:application/json'
+
+#q2_kw2a3
+curl 'http://127.0.0.1:5984/dblpdb8/_find' -d '{ "selector": { "$and": [ {"title": {"$regex": "(?i)text"}}, {"title": {"$regex": "(?i)mining"}}] }, "fields": ["title"], "limit": 7000000}' -H 'Content-Type:application/json'
+
+#q3_1o2o3
+curl 'http://127.0.0.1:5984/dblpdb8/_find' -d '{ "selector": { "$or": [ {"title": {"$regex": "(?i)database"}}, {"title": {"$regex": "(?i)text"}}, {"title": {"$regex": "(?i)mining"}}] }, "fields": ["title"], "limit": 7000000}' -H 'Content-Type:application/json'
+
+#q3_1a2a3
+curl 'http://127.0.0.1:5984/dblpdb8/_find' -d '{ "selector": { "$and": [ {"title": {"$regex": "(?i)database"}}, {"title": {"$regex": "(?i)text"}}, {"title": {"$regex": "(?i)mining"}}] }, "fields": ["title"], "limit": 7000000}' -H 'Content-Type:application/json'

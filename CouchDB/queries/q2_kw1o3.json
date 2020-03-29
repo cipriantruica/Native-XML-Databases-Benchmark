@@ -1,0 +1,1 @@
+{ "selector": { "$or": [ {"title": {"$regex": "(?i)database"}}, {"title": {"$regex": "(?i)mining"}}] }, "fields": ["title"], "limit": 7000000}

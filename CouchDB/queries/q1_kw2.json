@@ -1,0 +1,1 @@
+{ "selector": {"title": {"$regex": "(?i)text"}}, "fields": ["title"], "limit": 7000000 }

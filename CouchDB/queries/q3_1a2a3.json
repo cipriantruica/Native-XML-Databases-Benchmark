@@ -1,0 +1,1 @@
+{ "selector": { "$and": [ {"title": {"$regex": "(?i)database"}}, {"title": {"$regex": "(?i)text"}}, {"title": {"$regex": "(?i)mining"}}] }, "fields": ["title"], "limit": 7000000}
