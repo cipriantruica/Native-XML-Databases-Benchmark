@@ -1,5 +1,7 @@
+## The benckmark is described in the following paper:
 
-The Forgotten Document-Oriented Database Management Systems: An Overview, Comparison, and Benchmark of XML vs. JSON DODBMSes
+C.O. Truică, E.S. Apostol, J. Darmont, T.B. Pedersen. *The Forgotten Document-Oriented Database Management Systems: An Overview and Benchmark of Native XML DODBMSes in Comparison with JSON DODBMSes*. Big Data Research. January 2021 DOI: [10.1016/j.bdr.2021.100205](https://doi.org/10.1016/j.bdr.2021.100205)
+
 
 To run, after installing the databases, run the ``run.sh`` script in present in each database folder.
 
